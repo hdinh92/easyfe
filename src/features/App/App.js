@@ -1,21 +1,23 @@
-
-import React from 'react';
-import './App.css';
-import Header from '../../components/Header/Header';
-import Banner from '../../components/Banner/Banner';
-import Footer from '../../components/Footer/Footer';
-import PhotoPage from '../PhotoPage/PhotoPage';
+import Banner from "components/Banner/Banner";
+import Footer from "components/Footer/Footer";
+import Header from "components/Header/Header";
+import PhotoPage from "features/PhotoPage/PhotoPage";
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
-    <React.Fragment>
-      <Header />
-      <main>
+    <ThemeProvider theme={theme}>
+      <CssBaseline>
+        <Header />
         <Banner />
-        <PhotoPage />
-      </main>
-      <Footer />
-    </React.Fragment>
+        <Router>
+          {/* <AppWithRouterAccess /> */}
+          <PhotoPage />
+        </Router>
+        <Footer />
+      </CssBaseline>
+    </ThemeProvider>
   );
 }
 
